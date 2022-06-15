@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+   
+</head>
+<body>
+    <h3>1. Write code to create an ordered list with roman numbers.</h3>
+    <h4>Ordered List</h4>
+    <ol type="I">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Papaya</li>
+        <li>Orange</li>
+        <li>Mango</li>
+        <li>Pineapple</li>
+    </ol>
+    <br>
+    <h3>2. Write code to create an unordered list with a circle. </h3>
+    <h4>Unordered List</h4>
+    <ul type="circle">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Papaya</li>
+        <li>Orange</li>
+        <li>Mango</li>
+        <li>Pineapple</li>
+    </ul>
+    <br>
+    <h3>3. Write code to create a link to https://www.prepbytes.com</h3>
+    <a href="https://www.prepbytes.com/" target="_blank">PrepByte</a>
+    <br>
+    <h3>4. Write a code to insert an image.</h3>
+    <h4>Using Relative path:</h4>
+    <img src="./logoPrepBytes.svg" alt="There was a picture"><br>
+    <h4>Using Absolute path:</h4>
+    <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/navbar/logoPrepBytes.svg" alt="There was a picture">
+    <br>
+    <h3>5. Write a code to create a 2*2 table: Table columns should be name, salary, and provide two entries for this.</h3>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Salary</th>
+        </tr>
+        <tr>
+            <td>Ravi</td>
+            <td>INR 4Lakh</td>
+        </tr>
+        <tr>
+            <td>Omkar</td>
+            <td>INR 3.5Lakh</td>
+        </tr>
+    </table>
+    <h3>6. Create a form containing input fields like name age email and contact.</h3>
+    <form action="">
+        <label for="Name">Name:</label>&nbsp;
+        <input type="text" name="name" id="name" value="" placeholder="Write your name*" required><br>
+        <label for="age">Age:</label>&nbsp;
+        <input type="number" name="Age" id="age" value="" placeholder="Enter your Age*"required><br>
+        <label for="contact">Contact:</label>&nbsp;
+        <input type="tel" name="Contact" id="contact" value="" placeholder="Enter your Contact Number*" required><br>
+        <label for="email">Email:</label>&nbsp;
+        <input type="email" name="Email" id="email" value="" placeholder="Enter your Email*" required><br><br>
+        <input type="submit">
+        
+    </form>
+    <br>
+    <h3>7.  Create a table and explain how to achieve colspan.</h3>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th colspan="2">Phone</th>
+        </tr>
+        <tr>
+            <td>Ravi Patil</td>
+            <td>1325469358</td>
+            <td>1233566654</td>
+            
+        </tr>
+        <tr>
+            <td>Omkar Jadhav</td>
+            <td>1213546640</td>
+            <td>2136545644</td>
+        </tr>
+    </table><br>
+    <span>We can achieve colspan by putting colspan attribute inside table header '< th>'. It will create 2 column space for that column.</span>
+    <br>
+    <h3>8. Create a radio button (MERN, MEAN: course)and checkbox(HTML, CSS, React, Node: technology)
+        and explain the difference between the two.</h3>
+    <form action="">
+        <input type="radio" name="Radio" id="radio" value="MERN">MERN
+        <br>
+        <input type="radio" name="Radio" id="radio" value="MEAN">MEAN
+        <br><br>
+        <input type="checkbox" name="language1" id="language1" value="HTML" required>
+        <label for="language1">HTML</label>
+        <br>
+        <input type="checkbox" name="language2" id="language2" value="CSS">
+        <label for="language2">CSS</label>
+        <br>
+        <input type="checkbox" name="language3" id="language3" value="React">
+        <label for="language3">React</label>
+        <br>
+        <input type="checkbox" name="language4" id="language4" value="JS">
+        <label for="language4">JS</label>
+        <br>
+        <input type="checkbox" name="language5" id="language5" value="Node.js">
+        <label for="language5">Node.js</label>
+        <br><br>
+        <input type="submit">
+
+    </form>
+    <p>The difference between them is wherever radio attribute used we have only one choice to select from multiple items. In Check box we can select more than one items.</p>
+</body>
+</html>
