@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview prepapration Qs 3</title>
+</head>
+<body>
+    <!-- 1. Difference between flex-direction row and column.
+    Ans-    flex-direction: row -  It is the sub property of flex which is the property of CSS used to display items on horizontal axis in row manner. We can reverse the row order in flex.
+            Syntax: div {
+                            display: flex;
+                            flex-direction: row;
+                        }
+                    
+            flex-direction: column- It is the sub property of flex which is the property of CSS used to display items on vertical axis in column manner. Similar to row, we can reverse the column order in flex.
+            Syntax: div {
+                            display: flex;
+                            flex-direction: column;
+                        }-->
+
+    <!-- 2. Explain inline, internal, and external stylesheet.
+    Ans-    Inline CSS: It is the type of CSS we can use to apply style on a single html element. Inside of opening tag we can write inline css for that element but these styles are tough to be edited because they are not stored at a single place.
+            syntax: 
+                        <h2 style="color:red;margin-left:40px;">Inline CSS is applied on this heading.</h2>
+            
+            Internal CSS: The internal style sheet is used to add a unique style for a single document. It is defined in <head> section of the HTML page inside the <style> tag. Internal css is only useful for single page web document you can style several web pages by using the same code on every page but it will create confusion and increases code size.
+            Syntax:   
+                    <!DOCTYPE html>  
+                    <html>  
+                    <head>  
+                    <style>       
+                        h1 {  
+                            color: red;  
+                            margin-left: 80px;  
+                        }   
+                    </style>  
+                    </head>  
+                    <body>  
+                        <h1>The internal style sheet is applied on this heading.</h1>   
+                    </body>  
+                    </html>  
+                    </body>
+                    </html>
+                
+            External CSS: The external style sheet is generally used when you want to make changes on multiple pages. It is ideal for this condition because it facilitates you to change the look of the entire web site by changing just one file.
+            It uses the <link> tag on every pages and the <link> tag should be put inside the head section. The external style sheet may be written in any text editor but must be saved with a .css extension. This file should not contain HTML elements.
+            Syntax: <head>  
+                    <link rel="stylesheet" type="text/css" href="style.css">  
+                    </head>-->
+
+    <!--3. Justify-content allows you to do what? 
+    Ans-   It is a sub property of  flex used to align the items of the flexible box container when the items do not use all available space on the main-axis (horizontally). It defines how the browser distributes the space around and between the content items. 
+           The default value of this property is flex-start. The syntax is as follows
+                       display:flex;  
+                       justify-content: center | flex-start | flex-end | space-around | space-evenly | space-between | initial | inherit;    -->
+
+    <!--4. Difference between absolute and relative positioning.
+    Ans-   Relative Position: It is the property of css used to move item or container from its normal position. It is recomended to use this position for parent element. We can apply position relative and give top right bottom left in order to move an element.
+           Absolute Positions: It is the property of css used to place the items precisely where you want it. Absolute positioning is done relative to the first relatively (or absolutely) positioned parent element. In the case when there is no positioned parent element, the element that has position set to absolute will be positioned related directly to the HTML element (the page itself).
+           We can apply the position absolute and give top right bottom left in order to move an element. -->
+
+    <!--5. What is grid-template columns used for?
+    Ans-   Its the sub property of grid and It is used to specify the size of the columns. 
+           Syntax:               
+                                 .main {
+                                          display: grid;
+                                          grid-template-columns: 300px 1fr;
+                                        }-->
+
+    <!--6. What is the z-index in CSS?
+    Ans-   It is the property of CSS and it is used to specify the stacking order of the positioned elements (elements whose position value is either fixed, absolute, relative, or sticky). The stacking order means that the element's position along the z-axis, which is perpendicular to the screen.
+           We can give negative or positive value to z-index. Z-index can only be used with positions.
+           Syntax:   
+                    z-index: number|auto|inherit|initial;  -->
+    
+    <!--7. What is the difference between padding and margin?
+    Ans-   Padding: It is the property of CSS used to define the space between the element content and the element border. It clears an area around the content.
+           Top, bottom, left and right padding can be changed independently using separate properties. You can also change all properties at once by using shorthand padding property.
+        
+           Margin: It is the property of CSS and is used to define the space around elements. It is completely transparent and doesn't have any background color. It clears an area around the element.
+           Top, bottom, left and right margin can be changed independently using separate properties. You can also change all properties at once by using shorthand margin property.-->
