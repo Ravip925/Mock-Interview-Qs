@@ -1,147 +1,147 @@
-// console.log("Day 3");
+console.log("Day 3");
 
-// //1.What is callback hell
-// //Callback Hell is essentially nested callbacks stacked below one another forming a pyramid structure. Every callback depends/waits 
-// //for the previous callback, thereby making a pyramid structure that affects the readability and maintainability of the code. 
-// //we should always try to avoid using multiple callbacks to end up falling into callback hell.
+//1.What is callback hell
+//Callback Hell is essentially nested callbacks stacked below one another forming a pyramid structure. Every callback depends/waits 
+//for the previous callback, thereby making a pyramid structure that affects the readability and maintainability of the code. 
+//we should always try to avoid using multiple callbacks to end up falling into callback hell.
 
-// const getEmpId = () =>{
-//     setTimeout(() =>{
-//         console.log("Fetching the ID's");
-//         let id = [1,2,3,4,5];
-//         console.log(id);
+const getEmpId = () =>{
+    setTimeout(() =>{
+        console.log("Fetching the ID's");
+        let id = [1,2,3,4,5];
+        console.log(id);
 
-//         setTimeout(()=> {
-//             let empDetails = {
-//                 fName: "Harsh",
-//                 lName: "Bajaj",
-//                 age:25,
-//             }
-//             console.log(`The name of the Employee is ${empDetails.fName} ${empDetails.lName} and age is ${empDetails.age}`);
+        setTimeout(()=> {
+            let empDetails = {
+                fName: "Harsh",
+                lName: "Bajaj",
+                age:25,
+            }
+            console.log(`The name of the Employee is ${empDetails.fName} ${empDetails.lName} and age is ${empDetails.age}`);
 
-//             setTimeout(() =>{
-//                 empDetails.gender = "Male",
-//                 console.log(`The name of the Employee is ${empDetails.fName} ${empDetails.lName} and age is ${empDetails.age} and the gender is ${empDetails.gender}`);
-//             },2000);
+            setTimeout(() =>{
+                empDetails.gender = "Male",
+                console.log(`The name of the Employee is ${empDetails.fName} ${empDetails.lName} and age is ${empDetails.age} and the gender is ${empDetails.gender}`);
+            },2000);
 
-//         },2000);
-//     },2000);
-// }
-// getEmpId();
+        },2000);
+    },2000);
+}
+getEmpId();
 
-// //----------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------
 
-// //2.What are promises and why do we need them?
-// //promises are used to handle asynchronous opertions in js. they are ez to manage when 
-// //dealing with multiple asynchronous operations where callbacks can create callback hell leading to unmanagable code.
-// //it also allows us to make API calls or fetch data from web servers successfully. If not able to do so fetches us with error message
-// //It have three stages.
-// //1. pending                    2.Resolve(fulfilled)                            3.Rejected.
+//2.What are promises and why do we need them?
+//promises are used to handle asynchronous opertions in js. they are ez to manage when 
+//dealing with multiple asynchronous operations where callbacks can create callback hell leading to unmanagable code.
+//it also allows us to make API calls or fetch data from web servers successfully. If not able to do so fetches us with error message
+//It have three stages.
+//1. pending                    2.Resolve(fulfilled)                            3.Rejected.
 
-// const getId = new Promise((resolve, reject)=>{//producer  //resolve and reject are executor function
-//     setTimeout(() =>{
-//         let id = [1,2,3,4,5];
-//         resolve(id);
-//         //reject("error in fetching the details");
-//     }, 2000);
-// });
+const getId = new Promise((resolve, reject)=>{//producer  //resolve and reject are executor function
+    setTimeout(() =>{
+        let id = [1,2,3,4,5];
+        resolve(id);
+        //reject("error in fetching the details");
+    }, 2000);
+});
 
-// getId                        //consumer
-//     .then((data) =>{
-//         console.log("the resolved data is",data);
-//     })
-//     .catch((error) =>{
-//         console.log(error);
-//     });
+getId                        //consumer
+    .then((data) =>{
+        console.log("the resolved data is",data);
+    })
+    .catch((error) =>{
+        console.log(error);
+    });
 
-// // ========================================================================================================================================
+// ========================================================================================================================================
 
-// //3.What is promise chaining
-// //The methods of the Promise object such as promise.then(), promise.catch() and promise.finally() are used to connect further actions with a 
-// //promise that becomes settled. These methods also return a separate newly generated promise object. Therefore, we can call the promise’s instance
-// //method on the returned Promise. Thus, calling methods in this way is referred to as the promise chainin
+//3.What is promise chaining
+//The methods of the Promise object such as promise.then(), promise.catch() and promise.finally() are used to connect further actions with a 
+//promise that becomes settled. These methods also return a separate newly generated promise object. Therefore, we can call the promise’s instance
+//method on the returned Promise. Thus, calling methods in this way is referred to as the promise chainin
 
 
-// let p = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         resolve(5);
-//     }, 3 * 1000); // (*)
-// });
-// p.then((result) => { //(**)
-//     console.log(result); // 5
-//     return result * 2;
-// }).then((result) => { //(***)
-//     console.log(result); // 10
-//     return result * 3;
-// }).then((result) => {
-//     console.log(result); // 30
-//     return result * 4;
-// }).then((result) => {
-//     console.log(result); // 120
-//     return result * 5;
-// });
+let p = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(5);
+    }, 3 * 1000); // (*)
+});
+p.then((result) => { //(**)
+    console.log(result); // 5
+    return result * 2;
+}).then((result) => { //(***)
+    console.log(result); // 10
+    return result * 3;
+}).then((result) => {
+    console.log(result); // 30
+    return result * 4;
+}).then((result) => {
+    console.log(result); // 120
+    return result * 5;
+});
 
-// // ========================================================================================================================================
+// ========================================================================================================================================
 
-// // 4.What is the purpose of async/await keywords?
-// //Asynchronous/Await - They are used to handle promises more efficiently. The world async before a function always means
-// //that fn always returns a PROMISE. So, we therefore use async before the fn name to return a promise instead of value.
+// 4.What is the purpose of async/await keywords?
+//Asynchronous/Await - They are used to handle promises more efficiently. The world async before a function always means
+//that fn always returns a PROMISE. So, we therefore use async before the fn name to return a promise instead of value.
 
-// //Await is used to wait for the result that is to be returned from the promise. So we use await when we are calling a fn 
-// //which returns a promise. Also, we can use them(Async/Await) for making API calls.
+//Await is used to wait for the result that is to be returned from the promise. So we use await when we are calling a fn 
+//which returns a promise. Also, we can use them(Async/Await) for making API calls.
 
-// //Await is always used with the keyword async.
+//Await is always used with the keyword async.
 
-// // ===========================================================================================================================================
+// ===========================================================================================================================================
 
-// // 5.Give an example of async/await.
-// const functionOne = () =>{
-//     return("i am function one");
-// }
+// 5.Give an example of async/await.
+const functionOne = () =>{
+    return("i am function one");
+}
 
-// const functionTwo = () =>{
-//     return new Promise((res,rej)=>{
-//         setTimeout(() => {
-//             resolve("I am function two");
-//         }, 3000);
-//     })
-// }
+const functionTwo = () =>{
+    return new Promise((res,rej)=>{
+        setTimeout(() => {
+            resolve("I am function two");
+        }, 3000);
+    })
+}
 
-// const functionthree = () =>{
-//     return "I am Function three";
-// }
+const functionthree = () =>{
+    return "I am Function three";
+}
 
-// const callAllFunction = async() =>{
-//     let responseOne = functionOne();
-//         console.log(responseOne);
+const callAllFunction = async() =>{
+    let responseOne = functionOne();
+        console.log(responseOne);
 
-//     let responseTwo = await functionTwo();
-//         console.log(responseTwo);
+    let responseTwo = await functionTwo();
+        console.log(responseTwo);
     
-//     let responseThree = functionthree();
-//         console.log(responseThree);
-// }
+    let responseThree = functionthree();
+        console.log(responseThree);
+}
 
-// callAllFunction();
+callAllFunction();
 
-// // ================================================================================================================================
+// ================================================================================================================================
 
-// // 6.What is hoisting?
-// //When the JavaScript engine executes the JavaScript code, it creates the global execution context. The global execution context has two phases: creation and execution.
-// //During the creation phase, the JavaScript engine moves the variable and function declarations to the top of your code. This feature is known as hoisting in JavaScript.
+// 6.What is hoisting?
+//When the JavaScript engine executes the JavaScript code, it creates the global execution context. The global execution context has two phases: creation and execution.
+//During the creation phase, the JavaScript engine moves the variable and function declarations to the top of your code. This feature is known as hoisting in JavaScript.
 
-// var counter;
+var counter;
 
-// console.log(counter); // undefined
-// counter = 1;
+console.log(counter); // undefined
+counter = 1;
 
 
-// // ================================================================================================================================
+// ================================================================================================================================
 
-// // 7.What is the DOM?
-// //The Document Object Model (DOM) is an application programming interface (API) for manipulating HTML documents.
-// //The DOM represents an HTML document as a tree of nodes. The DOM provides functions that allow you to add, remove, and modify parts of the document effectively.
-// //Note that the DOM is cross-platform and language-independent ways of manipulating HTML and XML documents.
+// 7.What is the DOM?
+//The Document Object Model (DOM) is an application programming interface (API) for manipulating HTML documents.
+//The DOM represents an HTML document as a tree of nodes. The DOM provides functions that allow you to add, remove, and modify parts of the document effectively.
+//Note that the DOM is cross-platform and language-independent ways of manipulating HTML and XML documents.
 
 // ===================================================================================================================================
 
